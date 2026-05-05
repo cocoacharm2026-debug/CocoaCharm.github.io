@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artisan Chocolates | Handcrafted Elegance</title>
+
+    <style>
+
+        /* CSS Styles */
+
+        :root {
+
+            --dark-chocolate: #2d1b14;
+
+            --gold: #c5a059;
+
+            --cream: #f9f5f0;
+
+            --accent: #5e3c2e;
+
+        }
+
+
+        body {
+
+            font-family: 'Georgia', serif;
+
+            margin: 0;
+
+            background-color: var(--cream);
+
+            color: var(--dark-chocolate);
+
+            line-height: 1.6;
+
+        }
+
+
+        header {
+
+            background-color: white;
+
+            padding: 2rem;
+
+            text-align: center;
+
+            border-bottom: 1px solid var(--gold);
+
+        }
+
+
+        .logo {
+
+            max-width: 200px;
+
+            height: auto;
+
+        }
+
+
+        nav {
+
+            margin-top: 1rem;
+
+        }
+
+
+        nav a {
+
+            margin: 0 15px;
+
+            text-decoration: none;
+
+            color: var(--dark-chocolate);
+
+            text-transform: uppercase;
+
+            font-size: 0.9rem;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .hero {
+
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&q=80&w=1000');
+
+            background-size: cover;
+
+            background-position: center;
+
+            height: 400px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            text-align: center;
+
+        }
+
+
+        .hero-content h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 0;
+
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+        }
+
+
+        .section {
+
+            padding: 4rem 10%;
+
+            text-align: center;
+
+        }
+
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 2rem;
+
+            margin-top: 2rem;
+
+        }
+
+
+        .card {
+
+            background: white;
+
+            padding: 1.5rem;
+
+            border: 1px solid #eee;
+
+            transition: transform 0.3s;
+
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: var(--gold);
+
+        }
+
+
+        .card img {
+
+            width: 100%;
+
+            height: 200px;
+
+            object-fit: cover;
+
+            margin-bottom: 1rem;
+
+        }
+
+
+        .btn {
+
+            background-color: var(--gold);
+
+            color: white;
+
+            padding: 12px 25px;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+            margin-top: 1rem;
+
+            border-radius: 2px;
+
+            transition: background 0.3s;
+
+        }
+
+
+        .btn:hover {
+
+            background-color: var(--accent);
+
+        }
+
+
+        footer {
+
+            background-color: var(--dark-chocolate);
+
+            color: var(--cream);
+
+            padding: 3rem;
+
+            text-align: center;
+
+        }
+
+
+        .contact-info {
+
+            font-style: normal;
+
+            font-size: 0.9rem;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <!-- Replace the src with your saved logo file path -->
+
+        <img src="https://via.placeholder.com/200x80?text=YOUR+LOGO" alt="Artisan Chocolates Logo" class="logo">
+
+        <nav>
+
+            <a href="#collections">Collections</a>
+
+            <a href="#about">Our Story</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Handcrafted Perfection</h1>
+
+            <p>Small-batch chocolates made with organic ingredients.</p>
+
+        </div>
+
+    </section>
+
+
+    <section id="collections" class="section">
+
+        <h2 style="color: var(--gold);">The Summer Collection</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&q=80&w=400" alt="Truffles">
+
+                <h3>Signature Truffles</h3>
+
+                <p>Dark chocolate ganache infused with sea salt and vanilla bean.</p>
+
+                <a href="#" class="btn">View Details</a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&q=80&w=400" alt="Caramels">
+
+                <h3>Salted Caramels</h3>
+
+                <p>Velvety burnt sugar caramel dipped in 70% cacao.</p>
+
+                <a href="#" class="btn">View Details</a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1582176604445-21b173c35655?auto=format&fit=crop&q=80&w=400" alt="Fruit dipped">
+
+                <h3>Botanical Bars</h3>
+
+                <p>White chocolate topped with dried rose petals and pistachios.</p>
+
+                <a href="#" class="btn">View Details</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="about" class="section" style="background-color: white;">
+
+        <h2>Small Batches, Big Heart</h2>
+
+        <p style="max-width: 800px; margin: 0 auto;">Each piece is meticulously hand-painted and tempered in our local kitchen. We believe that chocolate is more than a sweet—it's an experience. We source our beans ethically to ensure every bite supports sustainable farming.</p>
+
+    </section>
+
+
+    <footer id="contact">
+
+        <h3>Order Your Custom Box</h3>
+
+        <address class="contact-info">
+
+            Email: hello@yourchocolateshop.com<br>
+
+            Phone: (555) 123-4567<br>
+
+            Follow us on Instagram for daily creations
+
+        </address>
+
+        <p style="font-size: 0.8rem; margin-top: 2rem;">&copy; 2026 Artisan Chocolates. All Rights Reserved.</p>
+
+    </footer>
+
+
+</body>
+
+</html>
