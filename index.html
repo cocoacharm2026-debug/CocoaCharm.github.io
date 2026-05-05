@@ -1,347 +1,198 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Artisan Chocolates | Handcrafted Elegance</title>
-
+    <title>CocoaCharm | Artisan Chocolates & Cookies</title>
     <style>
-
-        /* CSS Styles */
-
         :root {
-
-            --dark-chocolate: #2d1b14;
-
-            --gold: #c5a059;
-
-            --cream: #f9f5f0;
-
-            --accent: #5e3c2e;
-
+            /* NEW COLORS BASED ON LOGO AND REQUEST */
+            --primary: #523733; /* Dark Brown, taken from the text in the logo */
+            --light: #FFFFFF; /* White */
+            --accent: #EAE1D7; /* A soft beige/gold tone from the logo circle */
+            --logo-pink: #F8D8DC; /* This matches the pink watercolor in your logo */
+            --background: #FFF0F2; /* A slightly warmer, very light pink for the whole page background */
+            --text: #704843; /* Warm dark brown for main text, complementing the logo */
+            --secondary: #8C6D65; /* Mid-tone brown */
         }
-
 
         body {
-
             font-family: 'Georgia', serif;
-
             margin: 0;
-
-            background-color: var(--cream);
-
-            color: var(--dark-chocolate);
-
+            padding: 0;
+            background-color: var(--background); /* NEW LIGHT PINK PAGE BACKGROUND */
+            color: var(--text); /* NEW WARM BROWN MAIN TEXT COLOR */
             line-height: 1.6;
-
         }
-
 
         header {
-
-            background-color: white;
-
-            padding: 2rem;
-
+            /* This section is still dark brown, like rich chocolate, to pop the logo */
+            background-color: var(--primary); 
+            color: var(--light);
             text-align: center;
-
-            border-bottom: 1px solid var(--gold);
-
+            padding: 3rem 1rem 1rem 1rem; /* Adjust padding for logo space */
         }
 
+        header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--light); /* Keep main heading light against dark background */
+        }
 
-        .logo {
+        header p {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
 
-            max-width: 200px;
-
+        /* NEW LOGO IMAGE STYLING */
+        .logo-image {
+            max-width: 250px; /* Adjust size as needed */
             height: auto;
-
+            margin: -6rem auto 1rem auto; /* Overlap dark header slightly */
+            border-radius: 50%; /* Make it round to match the logo design */
+            display: block; /* Center it */
+            position: relative; /* For the negative margin to work */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Soft shadow */
         }
 
-
-        nav {
-
-            margin-top: 1rem;
-
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
         }
 
-
-        nav a {
-
-            margin: 0 15px;
-
-            text-decoration: none;
-
-            color: var(--dark-chocolate);
-
-            text-transform: uppercase;
-
-            font-size: 0.9rem;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        .hero {
-
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&q=80&w=1000');
-
-            background-size: cover;
-
-            background-position: center;
-
-            height: 400px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: pink;
-
+        .section-title {
             text-align: center;
-
+            color: var(--primary); /* Deep brown for titles */
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 100px; /* Add space below logo image area */
+            position: relative;
         }
 
-
-        .hero-content h1 {
-
-            font-size: 3rem;
-
-            margin-bottom: 0;
-
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--logo-pink); /* Use the logo's pink for the line */
+            margin: 10px auto 0;
         }
 
-
-        .section {
-
-            padding: 4rem 10%;
-
-            text-align: center;
-
-        }
-
-
-        .grid {
-
+        .menu-grid {
             display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-
-            margin-top: 2rem;
-
+            margin-bottom: 3rem;
         }
-
 
         .card {
-
-            background: white;
-
-            padding: 1.5rem;
-
-            border: 1px solid #eee;
-
-            transition: transform 0.3s;
-
+            background: var(--light); /* Keep cards bright white */
+            border: 1px solid var(--accent); /* Light beige border */
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
         }
-
 
         .card:hover {
-
             transform: translateY(-5px);
-
-            border-color: var(--gold);
-
         }
 
+        .card h3 {
+            color: var(--primary); /* Deep brown for menu items */
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
 
-        .card img {
+        .card p {
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            color: var(--text); /* WARM BROWN MAIN TEXT */
+            line-height: 1.5;
+        }
 
-            width: 100%;
+        .contact-section {
+            background-color: var(--logo-pink); /* NEW: CONTACT AREA HAS THE LOGO PINK BACKGROUND */
+            color: var(--primary); /* Deep brown text in contact area */
+            padding: 3rem 1rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
 
-            height: 200px;
-
-            object-fit: cover;
-
+        .contact-section h2 {
+            color: var(--primary); /* Dark brown title in contact section */
             margin-bottom: 1rem;
-
         }
 
-
-        .btn {
-
-            background-color: var(--gold);
-
-            color: white;
-
-            padding: 12px 25px;
-
-            text-decoration: none;
-
-            display: inline-block;
-
-            margin-top: 1rem;
-
-            border-radius: 2px;
-
-            transition: background 0.3s;
-
+        .contact-section p {
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
         }
 
-
-        .btn:hover {
-
-            background-color: var(--accent);
-
+        /* UPDATED: COLOR FOR CONTACT INFO TO MAKE IT STAND OUT BUT REMAIN REFINED */
+        .contact-info {
+            font-weight: bold;
+            color: var(--text); /* Use the rich brown for bold info */
+            font-size: 1.2rem;
         }
-
 
         footer {
-
-            background-color: var(--dark-chocolate);
-
-            color: var(--cream);
-
-            padding: 3rem;
-
             text-align: center;
-
+            padding: 2rem;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: var(--secondary); /* Medium brown for footer */
         }
-
-
-        .contact-info {
-
-            font-style: normal;
-
-            font-size: 0.9rem;
-
-        }
-
     </style>
-
 </head>
-
 <body>
 
-
     <header>
-
-        <!-- Replace the src with your saved logo file path -->
-
-        <img src="https://via.placeholder.com/200x80?text=YOUR+LOGO" alt="Artisan Chocolates Logo" class="logo">
-
-        <nav>
-
-            <a href="#collections">Collections</a>
-
-            <a href="#about">Our Story</a>
-
-            <a href="#contact">Contact</a>
-
-        </nav>
-
+        <h1>CocoaCharm</h1>
+        <p>Crafting exceptional artisan chocolates and freshly baked cookies with passion and care in every single bite.</p>
     </header>
 
+    <img src="logo.png" alt="CocoaCharm Logo" class="logo-image">
 
-    <section class="hero">
+    <div class="container">
+        <h2 class="section-title">Our Collections</h2>
+        
+        <div class="menu-grid">
+            <div class="card">
+                <h3>Artisan Chocolates</h3>
+                <p>A curated selection of handcrafted, bite-sized confections made from premium cocoa. Perfect for personal indulgences or thoughtful gifting.</p>
+            </div>
 
-        <div class="hero-content">
+            <div class="card">
+                <h3>Gourmet Cookies</h3>
+                <p>Soft, chewy, and perfectly textured cookies baked daily in small batches. A comforting treat for any time of the day.</p>
+            </div>
 
-            <h1>Handcrafted Perfection</h1>
-
-            <p>Small-batch chocolates made with organic ingredients.</p>
-
+            <div class="card">
+                <h3>Signature Gift Collections</h3>
+                <p>Beautifully wrapped assortments combining our best chocolates and cookies. Ideal for corporate events, holidays, and celebrations.</p>
+            </div>
         </div>
 
-    </section>
-
-
-    <section id="collections" class="section">
-
-        <h2 style="color: var(--gold);">The Summer Collection</h2>
-
-        <div class="grid">
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&q=80&w=400" alt="Truffles">
-
-                <h3>Signature Truffles</h3>
-
-                <p>Dark chocolate ganache infused with sea salt and vanilla bean.</p>
-
-                <a href="#" class="btn">View Details</a>
-
-            </div>
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&q=80&w=400" alt="Caramels">
-
-                <h3>Salted Caramels</h3>
-
-                <p>Velvety burnt sugar caramel dipped in 70% cacao.</p>
-
-                <a href="#" class="btn">View Details</a>
-
-            </div>
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1582176604445-21b173c35655?auto=format&fit=crop&q=80&w=400" alt="Fruit dipped">
-
-                <h3>Botanical Bars</h3>
-
-                <p>White chocolate topped with dried rose petals and pistachios.</p>
-
-                <a href="#" class="btn">View Details</a>
-
-            </div>
-
+        <div class="contact-section">
+            <h2>Order & Inquiries</h2>
+            <p>Interested in custom platters, large orders, or seasonal assortments? Reach out to us at:</p>
+            <p class="contact-info">cocoacharm.2026@gmail.com</p>
+            <p class="contact-info">(408) 951-0906</p>
         </div>
+    </div>
 
-    </section>
-
-
-    <section id="about" class="section" style="background-color: white;">
-
-        <h2>Small Batches, Big Heart</h2>
-
-        <p style="max-width: 800px; margin: 0 auto;">Each piece is meticulously hand-painted and tempered in our local kitchen. We believe that chocolate is more than a sweet—it's an experience. We source our beans ethically to ensure every bite supports sustainable farming.</p>
-
-    </section>
-
-
-    <footer id="contact">
-
-        <h3>Order Your Custom Box</h3>
-
-        <address class="contact-info">
-
-            Email: cocoacharm.2026@gmail.com<br>
-
-            Phone: (408) 591-0906 <br>
-
-            Follow us on Instagram for daily creations
-
-        </address>
-
-        <p style="font-size: 0.8rem; margin-top: 2rem;">&copy; 2026 Artisan Chocolates. All Rights Reserved.</p>
-
+    <footer>
+        &copy; 2026 CocoaCharm. All rights reserved.
     </footer>
 
-
 </body>
-
 </html>
